@@ -1,3 +1,4 @@
+//Copyright 2019 <LinkIvan333>
 #ifndef UNTITLED_JSON_H
 #define UNTITLED_JSON_H
 
@@ -30,7 +31,6 @@ private:
     void create_map(const string& s);
 
 public:
-
     Json(const string& s);
 
     bool is_array() const;
@@ -52,7 +52,6 @@ public:
     static unsigned int find_end(unsigned int i, const string& s);
 
     static string cut_num(unsigned int i, const string& s);
-
 };
 
-#endif //UNTITLED_JSON_H
+#endif //UNTITLED_JSON_HPP_
