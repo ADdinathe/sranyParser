@@ -6,5 +6,5 @@ CXX_FLAGS =  -pedantic -Werror -Wall -Wextra -Wno-unused-command-line-argument -
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/cygdrive/d/labb01/laba1/include 
+CXX_INCLUDES = -I/cygdrive/d/LABB01/laba1/include 
 

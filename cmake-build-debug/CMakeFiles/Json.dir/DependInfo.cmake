@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/d/labb01/laba1/sources/Json.cpp" "/cygdrive/d/labb01/laba1/cmake-build-debug/CMakeFiles/Json.dir/sources/Json.cpp.o"
+  "/cygdrive/d/LABB01/laba1/sources/Json.cpp" "/cygdrive/d/LABB01/laba1/cmake-build-debug/CMakeFiles/Json.dir/sources/Json.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -48,10 +48,10 @@ RM = /cygdrive/c/Users/qwest/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E r
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/d/labb01/laba1
+CMAKE_SOURCE_DIR = /cygdrive/d/LABB01/laba1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/d/labb01/laba1/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/d/LABB01/laba1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/labb01/laba1/cmake-build-debug/CMakeFiles /cygdrive/d/labb01/laba1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/LABB01/laba1/cmake-build-debug/CMakeFiles /cygdrive/d/LABB01/laba1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/labb01/laba1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/LABB01/laba1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
