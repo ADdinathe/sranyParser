@@ -1,6 +1,6 @@
 //Copyright 2019 <LinkIvan333>
-#ifndef INCLUDE_JSON_HPP
-#define INCLUDE_JSON_HPP
+#ifndef INCLUDE_JSON_HPP_
+#define INCLUDE_JSON_HPP_
 
 #include <any>
 #include <string>
@@ -54,4 +54,4 @@ public:
     static string cut_num(unsigned int i, const string& s);
 };
 
-#endif // INCLUDE_JSON_HPP
+#endif // INCLUDE_JSON_HPP_
