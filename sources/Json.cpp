@@ -103,9 +103,9 @@ string Json::read_word(unsigned int &i, const string& s) {
         throw std::logic_error("string isn't valid!");
     }
     while (s[i] != '"') i++;
-    key = s.substr(st, i - st);
+    word = s.substr(st, i - st);
     i++;
-    return key;
+    return word;
 }
 
 void Json::create_vector(const string& s) {
