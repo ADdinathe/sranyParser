@@ -1,9 +1,10 @@
-//Copyright 2019 <LinkIvan333>
+//Copyright 2019 <ADdinath>
 #include <Json.hpp>
 Json::Json(const string& s) {
     unsigned int i = 0;
     i = skip_spaces(i, s);
-    if (s[i] == '{') {
+    if (s[i] == '{')
+    {// Метод возвращает true, если данный экземпляр содержит в себе JSON-массив. Иначе false.
         is_json_object = true;
         create_map(s);
     }else if (s[i] == '[') {
@@ -22,7 +23,8 @@ bool Json::is_object() const{
     return is_json_object;
 }
 
-std::any& Json::operator[](const string& key) {
+std::any& Json::operator[](const string& key)///по ключу находит значение
+{
     if (Json::is_object()) {
         return this->json_map[key];
     } else {
@@ -42,13 +44,15 @@ Json Json::parse(const std::string& s) {
     return obj;
 }
 
-Json Json::parseFile(const std::string& path_to_file){
+Json Json::parseFile(const std::string& path_to_file)///парсит файлбзаписывает все в одну строку и потом передает объект
+{
     std::ifstream json;
     json.open(path_to_file);
     string s = "";
     string line;
-    while (!json.eof()) {
-        std::getline(json, line);
+    while (!json.eof()) ///пока не конец файла
+    {
+        std::getline(json, line);///передел в троку
         s += line;
     }
     Json obj(s);
@@ -83,14 +87,14 @@ unsigned int Json::find_end(unsigned int i, const string& s) {
 string Json::cut_num(unsigned int i, const string& s) {
     unsigned int st = i;
     string num;
-    while (isdigit(static_cast<unsigned char>(s[i]))) i++;
+    while (isdigit(static_cast<unsigned char>(s[i]))) i++;///(char(int 32)) пока элемент строки является цифрой идем дальше по строке
     num = s.substr(st, i - st);
     return num;
 }
 
 string Json::read_word(unsigned int &i, const string& s) {
     unsigned int st;
-    string key;
+    string word;
     i = skip_spaces(i, s);
     if (s[i] == '\"') {
         i++;
@@ -111,11 +115,11 @@ void Json::create_vector(const string& s) {
         if (s[i] == '{') {
             string s1;
             unsigned int n = find_end(i, s);
-            if (n == s.length())
+            if (n == s.length())///проверка на нахождение второй скобки
                 throw std::logic_error("string is not valid");
             s1 = s.substr(i, n - i + 1);
             Json obj(s1);
-            this->json_arr.emplace_back(obj.json_map);
+            this->json_arr.emplace_back(obj.json_map);///указатель на переменную класса , ставит в конец массива
             i += s1.length();
         } else if (s[i] == '\"') {
             string word;
