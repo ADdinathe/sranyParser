@@ -1,4 +1,4 @@
-//Copyright 2019 <LinkIvan333>
+//Copyright 2019 <ADdinath>
 #ifndef INCLUDE_JSON_HPP_
 #define INCLUDE_JSON_HPP_
 
@@ -45,11 +45,11 @@ public:
 
     static Json parseFile(const string& path_to_file);
 
-    static unsigned int skip_spaces(unsigned int i, const string& s);
+    static unsigned int probell(unsigned int i, const string& s);
 
-    static string read_word(unsigned int &i, const string& s);
+    static string slovo(unsigned int &i, const string& s);
 
-    static unsigned int find_end(unsigned int i, const string& s);
+    static unsigned int skobki(unsigned int i, const string& s);
 
     static string cut_num(unsigned int i, const string& s);
 };

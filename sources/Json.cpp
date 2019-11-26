@@ -2,7 +2,7 @@
 #include <Json.hpp>
 Json::Json(const string& s) {
     unsigned int i = 0;
-    i = skip_spaces(i, s);
+    i = probell(i, s);
     if (s[i] == '{')
     {
         is_json_object = true;
@@ -59,14 +59,14 @@ Json Json::parseFile(const std::string& path_to_file)
     return obj;
 }
 
-unsigned int Json::skip_spaces(unsigned int i, const string& s) {
+unsigned int Json::probell(unsigned int i, const string& s) {
     while (s[i] == ' ' || s[i] == ',') {
         i++;
     }
     return i;
 }
 
-unsigned int Json::find_end(unsigned int i, const string& s) {
+unsigned int Json::skobki(unsigned int i, const string& s) {
     unsigned int cnt_open = 1 , cnt_close = 0;
     char key1, key2;
     key2 = '}';
@@ -92,10 +92,10 @@ string Json::cut_num(unsigned int i, const string& s) {
     return num;
 }
 
-string Json::read_word(unsigned int &i, const string& s) {
+string Json::slovo(unsigned int &i, const string& s) {
     unsigned int st;
     string word;
-    i = skip_spaces(i, s);
+    i = probell(i, s);
     if (s[i] == '\"') {
         i++;
         st = i;
@@ -111,10 +111,10 @@ string Json::read_word(unsigned int &i, const string& s) {
 void Json::create_vector(const string& s) {
     unsigned int i = 1;
     while (i < s.find_last_of(']')) {
-        skip_spaces(i, s);
+        probell(i, s);
         if (s[i] == '{') {
             string s1;
-            unsigned int n = find_end(i, s);
+            unsigned int n = skobki(i, s);
             if (n == s.length())
                 throw std::logic_error("string is not valid");
             s1 = s.substr(i, n - i + 1);
@@ -123,8 +123,8 @@ void Json::create_vector(const string& s) {
             i += s1.length();
         } else if (s[i] == '\"') {
             string word;
-            word = read_word(i, s);
-            i = skip_spaces(i, s);
+            word = slovo(i, s);
+            i = probell(i, s);
             this->json_arr.emplace_back(word);
         } else if ((s[i] == 't' && s[i + 1] == 'r' && s[i + 2] == 'u'
         && s[i + 3] == 'e') || (s[i] == 'f' && s[i + 1] == 'a'
@@ -140,7 +140,7 @@ void Json::create_vector(const string& s) {
             this->json_arr.emplace_back(x);
         } else if (s[i] == '[') {
             string s1;
-            unsigned int n = find_end(i, s);
+            unsigned int n = skobki(i, s);
             if (n == s.length())
                 throw std::logic_error("string is not valid");
             s1 = s.substr(i, n - i + 1);
@@ -159,7 +159,7 @@ void Json::create_vector(const string& s) {
                 this->json_arr.emplace_back(d);
             }
         }
-        i = skip_spaces(i, s);
+        i = probell(i, s);
     }
 }
 
@@ -167,16 +167,16 @@ void Json::create_map(const string& s) {
     unsigned int i = 1;
     while (i < s.find_last_of('}')) {
         string key;
-        skip_spaces(i, s);
-        key = read_word(i, s);
-        i = skip_spaces(i, s);
+        probell(i, s);
+        key = slovo(i, s);
+        i = probell(i, s);
         if (s[i] != ':')
             throw std::logic_error("String is not valid");
         i++;
-        i = skip_spaces(i, s);
+        i = probell(i, s);
         if (s[i] == '{') {
             string s1;
-            unsigned int n = find_end(i, s);
+            unsigned int n = skobki(i, s);
             if ( n == s.length())
                 throw std::logic_error("string is not valid");
             s1 = s.substr(i, n - i + 1);
@@ -185,8 +185,8 @@ void Json::create_map(const string& s) {
             i += s1.length();
         } else if (s[i] == '\"') {
             string word;
-            word = read_word(i, s);
-            i = skip_spaces(i, s);
+            word = slovo(i, s);
+            i = probell(i, s);
             this->json_map[key] = word;
         } else if ((s[i] == 't' && s[i + 1] == 'r' && s[i + 2] == 'u'
         && s[i + 3] == 'e') || (s[i] == 'f' && s[i + 1] == 'a'
@@ -202,7 +202,7 @@ void Json::create_map(const string& s) {
             this->json_map[key] = x;
         } else if (s[i] == '[') {
             string s1;
-            unsigned int  n = find_end(i, s);
+            unsigned int  n = skobki(i, s);
             if ( n == s.length())
                 throw std::logic_error("string is not valid");
 
@@ -222,6 +222,6 @@ void Json::create_map(const string& s) {
                 this->json_map[key] = d;
             }
         }
-        i = skip_spaces(i, s);
+        i = probell(i, s);
     }
 }
