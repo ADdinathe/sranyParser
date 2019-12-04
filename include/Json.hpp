@@ -9,6 +9,9 @@
 #include <map>
 #include <typeinfo>
 #include <fstream>
+#include <regex>
+#include <iostream>
+
 
 
 using std::cout;
@@ -37,6 +40,7 @@ public:
 
     bool is_object() const;
 
+
     std::any& operator[](const string& key);
 
     std::any& operator[](int index);
@@ -48,6 +52,8 @@ public:
     static unsigned int probell(unsigned int i, const string& s);
 
     static string slovo(unsigned int &i, const string& s);
+
+
 
     static unsigned int skobki(unsigned int i, const string& s);
 

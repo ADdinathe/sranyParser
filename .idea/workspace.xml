@@ -18,7 +18,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Json.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Json.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/Json.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/Json.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +110,14 @@
       <workItem from="1574620577381" duration="68000" />
       <workItem from="1574703727263" duration="359000" />
       <workItem from="1574783266179" duration="1402000" />
+      <workItem from="1574791056350" duration="1710000" />
+      <workItem from="1575026053787" duration="4000" />
+      <workItem from="1575028261509" duration="2615000" />
+      <workItem from="1575103311389" duration="940000" />
+      <workItem from="1575110023570" duration="775000" />
+      <workItem from="1575118394678" duration="322000" />
+      <workItem from="1575395985925" duration="797000" />
+      <workItem from="1575489407800" duration="136000" />
     </task>
     <servers />
   </component>
